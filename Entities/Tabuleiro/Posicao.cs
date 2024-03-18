@@ -1,4 +1,4 @@
-﻿namespace Tabuleiro
+﻿namespace Entities.Tabuleiro
 {
     internal class Posicao (int linha, int coluna)
     {
