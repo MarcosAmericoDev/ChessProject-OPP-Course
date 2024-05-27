@@ -1,6 +1,6 @@
 ﻿namespace Entities.Tabuleiro.Enums
 {
-    internal enum Cor
+    enum Cor
     {
         Branca,
         Preta,

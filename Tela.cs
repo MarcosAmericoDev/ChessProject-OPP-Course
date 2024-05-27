@@ -2,7 +2,7 @@
 
 namespace ChessProject
 {
-    internal class Tela
+    class Tela
     {
         public static void ImprimeTabuleiro(Tabuleiro tab)
         {
