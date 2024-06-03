@@ -16,5 +16,10 @@ namespace Entities.Tabuleiro
             Tab = tab;
             QuantDeMovimentos = 0;
         }
+
+        public void incrementarQteMovimento()
+        {
+            QuantDeMovimentos++;
+        }
     }
 }
