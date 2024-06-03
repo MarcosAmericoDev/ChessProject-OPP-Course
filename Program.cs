@@ -8,10 +8,24 @@ namespace ChessProject
     {
         static void Main(string[] args)
         {
-            PosicaoXadrez pos = new PosicaoXadrez('c', 7);
+            try
+            {
+                Tabuleiro tab = new Tabuleiro(8, 8);
 
-            Console.WriteLine(pos);
-            Console.WriteLine(pos.toPosicao());
+                tab.colocarPeca(new Torre(tab, Cor.Branca), new Posicao(0, 0));
+
+                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 4));
+
+                tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(0, 1));
+
+                tab.colocarPeca(new Rei(tab, Cor.Branca), new Posicao(3, 5));
+                Tela.ImprimeTabuleiro(tab);
+
+                
+            } catch (TabuleiroException ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
             Console.ReadLine();
         }
     }
