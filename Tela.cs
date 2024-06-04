@@ -1,5 +1,6 @@
 ﻿using Entities.Tabuleiro;
 using Entities.Tabuleiro.Enums;
+using Xadrez;
 
 namespace ChessProject
 {
@@ -18,7 +19,7 @@ namespace ChessProject
                     }
                     else
                     {
-                        imprimirPeca(tab.Peca(i,j));
+                        imprimirPeca(tab.Peca(i, j));
                         Console.Write(" ");
                     }
                 }
@@ -40,6 +41,14 @@ namespace ChessProject
                 Console.Write(peca);
                 Console.ForegroundColor = aux;
             }
+        }
+
+        public static PosicaoXadrez lerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1] + "");
+            return new PosicaoXadrez(coluna, linha);
         }
     }
 }
