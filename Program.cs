@@ -15,6 +15,9 @@ namespace ChessProject
                 {
                     Console.Clear();
                     Tela.ImprimeTabuleiro(partida.Tab);
+                    Console.WriteLine();
+                    Console.WriteLine($"Turno: {partida.Turno}");
+                    Console.WriteLine($"Aguardando jogada: {partida.JogadorAtual}");
 
                     Console.WriteLine();
                     Console.Write("Origem: ");
@@ -29,7 +32,7 @@ namespace ChessProject
                     Console.Write("Destino: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
-                    partida.executaMovimento(origem, destino);
+                    partida.realizaJogada(origem, destino);
                 }
             } catch (TabuleiroException ex) 
             {

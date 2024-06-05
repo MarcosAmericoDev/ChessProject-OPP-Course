@@ -7,8 +7,8 @@ namespace Xadrez
     {
         public Tabuleiro Tab { get; private set; }
         public bool Terminada { get; private set; }
-        private int Turno;
-        private Cor JogadorAtual;
+        public int Turno { get; private set; }
+        public Cor JogadorAtual {  get; private set; }
 
         public PartidaDeXadrez()
         {
@@ -27,7 +27,26 @@ namespace Xadrez
             Tab.colocarPeca(p, destino);
         }
 
-        private void colocarPecas()
+        public void realizaJogada(Posicao origem, Posicao destino)
+        {
+            executaMovimento(origem, destino);
+            Turno++;
+            mudaJogador();
+        }
+
+        private void mudaJogador()
+        {
+            if (JogadorAtual == Cor.Branca)
+            {
+                JogadorAtual = Cor.Preta;
+            }
+            else
+            {
+                JogadorAtual = Cor.Branca;
+            }
+        }
+
+            private void colocarPecas()
         {
             Tab.colocarPeca(new Torre(Tab, Cor.Branca), new PosicaoXadrez('c', 1).toPosicao());
             Tab.colocarPeca(new Torre(Tab, Cor.Branca), new PosicaoXadrez('c', 2).toPosicao());
