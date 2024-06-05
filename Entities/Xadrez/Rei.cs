@@ -73,7 +73,7 @@ namespace Xadrez
             }
 
             // noroeste
-            pos.definirValores(Posicao.Linha - 1, Posicao.Coluna);
+            pos.definirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
             if (Tab.posicaoValida(pos) && podeMover(pos))
             {
                 matTabuleiro[pos.Linha, pos.Coluna] = true;
